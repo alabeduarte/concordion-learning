@@ -1,0 +1,59 @@
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+    <body>
+    	<fieldset id="loginSucesso">
+    		<p><b>Exemplo 1:</b> Usuário loga com sucesso</p>
+	        <p>
+	            Usuário deve entrar com os dados:
+	        </p>
+	        <table>
+	        	<tr>
+	        		<th>Login</th>
+		        	<td concordion:set="#login">alabeduarte</td>
+	        	</tr>
+	        	<tr>
+		        	<th>Senha</th>
+		        	<td concordion:set="#senha">******</td>
+	        	</tr>
+	        </table>
+	        <p concordion:execute="#usuarioLogado = logon(#login, #senha)">
+	        	Ao logar no sistema, deve ser apresentada a mensagem: Olá <b concordion:assertEquals="#usuarioLogado.login">alabeduarte</b>
+	        </p>
+    	</fieldset>
+    	<fieldset id="loginFalha">
+    		<p><b>Exemplo 2:</b> Usuário entra com login inexistente</p>
+	        <p>
+	            Usuário deve entrar com os dados:
+	        </p>
+	        <table>
+	        	<tr>
+	        		<th>Login</th>
+		        	<td concordion:set="#login">alabe</td>
+	        	</tr>
+	        	<tr>
+		        	<th>Senha</th>
+		        	<td concordion:set="#senha">******</td>
+	        	</tr>
+	        </table>
+	        <p concordion:execute="#usuarioLogado = logon(#login, #senha)">
+	        	<span concordion:assertNull="#usuarioLogado.login"></span>
+	        </p>
+    	</fieldset>
+    	<fieldset id="validaLogin">
+    		<p><b>Exemplo 3:</b> Senha deve conter no mínimo 6 caracteres</p>
+	        <p>
+	            Usuário deve entrar com os dados:
+	        </p>
+	        <table>
+	        	<tr>
+	        		<th>Login</th>
+		        	<td concordion:set="#login">alabeduarte</td>
+	        	</tr>
+	        	<tr>
+		        	<th>Senha</th>
+		        	<td concordion:set="#senha">***</td>
+	        	</tr>
+	        </table>
+        	Mensagem de erro: <b concordion:assertEquals="validaLogin(#login, #senha)">Senha deve conter no mínimo 6 caracteres</b>
+    	</fieldset>
+    </body>
+</html>
