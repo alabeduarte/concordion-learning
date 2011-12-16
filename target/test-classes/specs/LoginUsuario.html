@@ -34,12 +34,27 @@
 		        	<td concordion:set="#senha">******</td>
 	        	</tr>
 	        </table>
-	        <p concordion:execute="#usuarioLogado = logon(#login, #senha)">
-	        	<span concordion:assertNull="#usuarioLogado.login"></span>
+        	<span concordion:assertEquals="logonInvalido(#login, #senha)">Login/Senha inválido(s)</span>
+    	</fieldset>
+    	<fieldset id="senhaFalha">
+    		<p><b>Exemplo 2:</b> Usuário entra com senha incorreta</p>
+	        <p>
+	            Usuário deve entrar com os dados:
 	        </p>
+	        <table>
+	        	<tr>
+	        		<th>Login</th>
+		        	<td concordion:set="#login">alabeduarte</td>
+	        	</tr>
+	        	<tr>
+		        	<th>Senha</th>
+		        	<td concordion:set="#senha">######</td>
+	        	</tr>
+	        </table>
+        	<span concordion:assertEquals="logonInvalido(#login, #senha)">Login/Senha inválido(s)</span>
     	</fieldset>
     	<fieldset id="validaLogin">
-    		<p><b>Exemplo 3:</b> Senha deve conter no mínimo 6 caracteres</p>
+    		<p><b>Exemplo 4:</b> Senha deve conter no mínimo 6 caracteres</p>
 	        <p>
 	            Usuário deve entrar com os dados:
 	        </p>

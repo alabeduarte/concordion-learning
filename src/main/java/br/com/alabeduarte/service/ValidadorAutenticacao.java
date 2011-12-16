@@ -11,24 +11,28 @@ public class ValidadorAutenticacao {
 		this.usuarioLogado = usuarioLogado;
 	}
 	
-	public boolean isSenhaCorreta(UsuarioLogado usuarioLogado, String senha) {
-		if (usuarioLogado != null) {
-			boolean senhaCorreta = usuarioLogado.getSenha().equals(senha);
-			if (senhaCorreta) {
-				return true;
-			} else {
-				mensagemValidacao = "Senha Inválida";
-				return false;
-			}
+	public boolean isAutenticado(UsuarioLogado usuarioLogado, String senha) {
+		final String MENSAGEM = "Login/Senha inválido(s)";
+		boolean loginValido = false;
+		if (usuarioLogado == null) {
+			loginValido = false;
 		} else {
-			mensagemValidacao = "Usuário não encontrado";
-			return false;
+			loginValido = this.isSenhaCorreta(usuarioLogado, senha);
 		}
+		if (!loginValido) {
+			mensagemValidacao = MENSAGEM;
+		}
+		return loginValido;
+	}
+	
+	private boolean isSenhaCorreta(UsuarioLogado usuarioLogado, String senha) {
+		return usuarioLogado.getSenha().equals(senha);
 	}
 	
 	public boolean isSenhaComQuantidadeDeCaracteresInvalidos() {
-		if (usuarioLogado.getSenha().length() < 6) {
-			mensagemValidacao = "Senha deve conter no mínimo 6 caracteres";
+		final int minimoDeCaracteresExigidos = 6;
+		if (usuarioLogado.getSenha().length() < minimoDeCaracteresExigidos) {
+			mensagemValidacao = "Senha deve conter no mínimo " + minimoDeCaracteresExigidos + " caracteres";
 			return true;
 		} else return false;
 	}

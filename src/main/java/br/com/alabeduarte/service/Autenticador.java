@@ -20,7 +20,7 @@ public class Autenticador {
 		}
 		
 		UsuarioLogado usuarioLogado = usuariosDoSistema.get(usuario.getLogin());
-		if (validadorAutenticacao.isSenhaCorreta(usuarioLogado, usuario.getSenha())) {
+		if (validadorAutenticacao.isAutenticado(usuarioLogado, usuario.getSenha())) {
 			return usuarioLogado;
 		} else {
 			throw new IllegalArgumentException(validadorAutenticacao.getMensagemValidacao());
