@@ -1,9 +1,10 @@
-package br.com.alabeduarte.repository;
+package br.com.alabeduarte.persistence.dao;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import br.com.alabeduarte.domain.UsuarioLogado;
+import br.com.alabeduarte.repository.UsuariosDoSistema;
 
 public class UsuariosDoSistemaDao implements UsuariosDoSistema {
 

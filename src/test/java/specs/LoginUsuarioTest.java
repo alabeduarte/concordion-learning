@@ -7,8 +7,8 @@ import org.junit.Before;
 import org.junit.runner.RunWith;
 
 import br.com.alabeduarte.domain.UsuarioLogado;
+import br.com.alabeduarte.persistence.dao.UsuariosDoSistemaDao;
 import br.com.alabeduarte.repository.UsuariosDoSistema;
-import br.com.alabeduarte.repository.UsuariosDoSistemaDao;
 import br.com.alabeduarte.service.Autenticador;
 import br.com.alabeduarte.service.ValidadorAutenticacao;
 
