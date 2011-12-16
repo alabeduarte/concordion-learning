@@ -1,15 +1,14 @@
 package br.com.alabeduarte.service;
 
-import java.util.Map;
-
 import br.com.alabeduarte.domain.UsuarioLogado;
+import br.com.alabeduarte.repository.UsuariosDoSistema;
 
 public class Autenticador {
 
 	private ValidadorAutenticacao validadorAutenticacao;
-	private Map<String, UsuarioLogado> usuariosDoSistema;
+	private UsuariosDoSistema usuariosDoSistema;
 
-	public Autenticador(ValidadorAutenticacao validadorAutenticacao, Map<String, UsuarioLogado> usuariosDoSistema) {
+	public Autenticador(ValidadorAutenticacao validadorAutenticacao, UsuariosDoSistema usuariosDoSistema) {
 		this.validadorAutenticacao = validadorAutenticacao;
 		this.usuariosDoSistema = usuariosDoSistema;
 	}

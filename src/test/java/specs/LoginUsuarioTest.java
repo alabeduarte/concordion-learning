@@ -1,28 +1,26 @@
 package specs;
 
 import java.util.HashMap;
-import java.util.Map;
 
 import org.concordion.integration.junit4.ConcordionRunner;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 
 import br.com.alabeduarte.domain.UsuarioLogado;
+import br.com.alabeduarte.repository.UsuariosDoSistema;
+import br.com.alabeduarte.repository.UsuariosDoSistemaDao;
 import br.com.alabeduarte.service.Autenticador;
 import br.com.alabeduarte.service.ValidadorAutenticacao;
 
 @RunWith(ConcordionRunner.class)
 public class LoginUsuarioTest {
 
-	private Map<String, UsuarioLogado> usuariosDoSistema;
-	
-	public LoginUsuarioTest() {
-		usuariosDoSistema = new HashMap<String, UsuarioLogado>();
-	}
+	private UsuariosDoSistema usuariosDoSistema;
 	
 	@Before
 	public void setUp() {
-		usuariosDoSistema.put("alabeduarte", new UsuarioLogado("alabeduarte", "******"));
+		usuariosDoSistema = new UsuariosDoSistemaDao();
+		usuariosDoSistema.add("alabeduarte", new UsuarioLogado("alabeduarte", "******"));
 	}
 	
 	public UsuarioLogado logon(String login, String senha) {

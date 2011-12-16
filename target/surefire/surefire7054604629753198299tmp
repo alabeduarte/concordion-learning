@@ -1,5 +1,5 @@
 #surefire
-#Thu Dec 15 22:03:14 GMT-03:00 2011
+#Thu Dec 15 22:13:35 GMT-03:00 2011
 testClassesDirectory=/Users/alabeduarte/Documents/workspace/concordion-learning/target/test-classes
 classPathUrl.4=/Users/alabeduarte/.m2/repository/org/mockito/mockito-all/1.8.5/mockito-all-1.8.5.jar
 classPathUrl.3=/Users/alabeduarte/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar

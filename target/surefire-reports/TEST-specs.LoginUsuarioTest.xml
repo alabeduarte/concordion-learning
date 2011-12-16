@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.276" errors="0" skipped="0" tests="1" name="specs.LoginUsuarioTest">
+<testsuite failures="0" time="0.261" errors="0" skipped="0" tests="1" name="specs.LoginUsuarioTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries"/>
@@ -22,7 +22,7 @@
     <property name="basedir" value="/Users/alabeduarte/Documents/workspace/concordion-learning"/>
     <property name="java.endorsed.dirs" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/endorsed"/>
     <property name="os.arch" value="x86_64"/>
-    <property name="surefire.real.class.path" value="/Users/alabeduarte/Documents/workspace/concordion-learning/target/surefire/surefirebooter3217561302814811114.jar"/>
+    <property name="surefire.real.class.path" value="/Users/alabeduarte/Documents/workspace/concordion-learning/target/surefire/surefirebooter7255361644007727255.jar"/>
     <property name="java.io.tmpdir" value="/var/folders/zc/5j0dgzvx2173chlp095k0bj40000gn/T/"/>
     <property name="line.separator" value="
 "/>
@@ -47,7 +47,7 @@
     <property name="java.vm.specification.version" value="1.0"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"/>
-    <property name="sun.java.command" value="/Users/alabeduarte/Documents/workspace/concordion-learning/target/surefire/surefirebooter3217561302814811114.jar /Users/alabeduarte/Documents/workspace/concordion-learning/target/surefire/surefire6353010423272424409tmp /Users/alabeduarte/Documents/workspace/concordion-learning/target/surefire/surefire2507044940433042438tmp"/>
+    <property name="sun.java.command" value="/Users/alabeduarte/Documents/workspace/concordion-learning/target/surefire/surefirebooter7255361644007727255.jar /Users/alabeduarte/Documents/workspace/concordion-learning/target/surefire/surefire7054604629753198299tmp /Users/alabeduarte/Documents/workspace/concordion-learning/target/surefire/surefire4505335928920294121tmp"/>
     <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="apple.awt.CToolkit"/>
@@ -66,5 +66,5 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.273" classname="specs.LoginUsuarioTest" name="[Concordion Specification for &apos;LoginUsuario&apos;]"/>
+  <testcase time="0.257" classname="specs.LoginUsuarioTest" name="[Concordion Specification for &apos;LoginUsuario&apos;]"/>
 </testsuite>
