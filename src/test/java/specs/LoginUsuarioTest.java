@@ -1,7 +1,5 @@
 package specs;
 
-import java.util.HashMap;
-
 import org.concordion.integration.junit4.ConcordionRunner;
 import org.junit.Before;
 import org.junit.runner.RunWith;
@@ -43,6 +41,17 @@ public class LoginUsuarioTest {
 		if (validadorAutenticacao.isSenhaComQuantidadeDeCaracteresInvalidos()) {
 			return validadorAutenticacao.getMensagemValidacao();
 		} else return "";
+	}
+	
+	public String logonEfetuadoComSucesso(String login, String senha) {
+		try {
+			if (this.logon(login, senha) != null) {
+				return "OK";
+			}
+		} catch (IllegalArgumentException e) {
+			return "FAIL";
+		}
+		return "ERRO";
 	}
 	
 }

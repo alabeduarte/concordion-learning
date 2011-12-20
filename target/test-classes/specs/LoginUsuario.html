@@ -1,4 +1,7 @@
 <html xmlns:concordion="http://www.concordion.org/2007/concordion">
+	<head>
+        <link href="../../../concordion.css" rel="stylesheet" type="text/css" />
+    </head>
     <body>
     	<fieldset id="loginSucesso">
     		<p><b>Exemplo 1:</b> Usuário loga com sucesso</p>
@@ -69,6 +72,59 @@
 	        	</tr>
 	        </table>
         	Mensagem de erro: <b concordion:assertEquals="validaLogin(#login, #senha)">Senha deve conter no mínimo 6 caracteres</b>
+    	</fieldset>
+    	<fieldset id="table">
+    		<p><b>Exemplo 5:</b> Resumo</p>
+	        <p>
+	            Usuário deve entrar com os dados:
+	        </p>
+	        <table concordion:execute="#result = logonEfetuadoComSucesso(#login, #senha)">
+	        	<tr>
+                    <th concordion:set="#login">Login</th>
+                    <th concordion:set="#senha">Senha</th>
+                    <th concordion:assertEquals="#result">Logon Efetuado com Sucesso</th>
+                </tr>
+	        	<tr>
+	        		<td>alabeduarte</td>
+                    <td>******</td>
+                    <td>OK</td>
+	        	</tr>
+	        	<tr>
+	        		<td>alabeduarte</td>
+                    <td>***</td>
+                    <td>FAIL</td>
+	        	</tr>
+	        	<tr>
+	        		<td>alabe</td>
+                    <td>***</td>
+                    <td>FAIL</td>
+	        	</tr>
+	        	<tr>
+	        		<td>alabe</td>
+                    <td>******</td>
+                    <td>FAIL</td>
+	        	</tr>
+	        	<tr>
+	        		<td>alabeduarte</td>
+                    <td>######</td>
+                    <td>FAIL</td>
+	        	</tr>
+	        	<tr>
+	        		<td>alabe</td>
+                    <td>######</td>
+                    <td>FAIL</td>
+	        	</tr>
+	        	<tr>
+	        		<td>alabeduarte</td>
+                    <td>***###</td>
+                    <td>FAIL</td>
+	        	</tr>
+	        	<tr>
+	        		<td>usuarioteste</td>
+                    <td>######</td>
+                    <td>FAIL</td>
+	        	</tr>
+	        </table>
     	</fieldset>
     </body>
 </html>
