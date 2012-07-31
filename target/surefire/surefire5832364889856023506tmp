@@ -1,6 +1,0 @@
-#surefire
-#Tue Dec 20 16:54:50 GMT-03:00 2011
-user.dir=/Users/alabeduarte/Documents/workspace/concordion-learning
-localRepository=/Users/alabeduarte/.m2/repository
-concordion.output.dir=target/concordion
-basedir=/Users/alabeduarte/Documents/workspace/concordion-learning
