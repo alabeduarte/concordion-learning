@@ -1,17 +1,17 @@
 package br.com.alabeduarte.service;
 
-import br.com.alabeduarte.domain.UsuarioLogado;
+import br.com.alabeduarte.domain.Usuario;
 
 public class ValidadorAutenticacao {
 
 	private String mensagemValidacao;
-	private UsuarioLogado usuarioLogado;
+	private Usuario usuarioLogado;
 
-	public ValidadorAutenticacao(UsuarioLogado usuarioLogado) {
+	public ValidadorAutenticacao(Usuario usuarioLogado) {
 		this.usuarioLogado = usuarioLogado;
 	}
 	
-	public boolean isAutenticado(UsuarioLogado usuarioLogado, String senha) {
+	public boolean isAutenticado(Usuario usuarioLogado, String senha) {
 		final String MENSAGEM = "Login/Senha inválido(s)";
 		boolean loginValido = false;
 		if (usuarioLogado == null) {
@@ -25,7 +25,7 @@ public class ValidadorAutenticacao {
 		return loginValido;
 	}
 	
-	private boolean isSenhaCorreta(UsuarioLogado usuarioLogado, String senha) {
+	private boolean isSenhaCorreta(Usuario usuarioLogado, String senha) {
 		return usuarioLogado.getSenha().equals(senha);
 	}
 	

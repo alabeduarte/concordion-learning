@@ -1,0 +1,130 @@
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+	<head>
+        <link href="../../../concordion.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+    	<fieldset id="loginSucesso">
+    		<p><b>Exemplo 1:</b> Usuário loga com sucesso</p>
+	        <p>
+	            Usuário deve entrar com os dados:
+	        </p>
+	        <table>
+	        	<tr>
+	        		<th>Login</th>
+		        	<td concordion:set="#login">alabeduarte</td>
+	        	</tr>
+	        	<tr>
+		        	<th>Senha</th>
+		        	<td concordion:set="#senha">******</td>
+	        	</tr>
+	        </table>
+	        <p concordion:execute="#usuarioLogado = logon(#login, #senha)">
+	        	Ao logar no sistema, deve ser apresentada a mensagem: Olá <b concordion:assertEquals="#usuarioLogado.login">alabeduarte</b>
+	        </p>
+    	</fieldset>
+    	<fieldset id="loginFalha">
+    		<p><b>Exemplo 2:</b> Usuário entra com login inexistente</p>
+	        <p>
+	            Usuário deve entrar com os dados:
+	        </p>
+	        <table>
+	        	<tr>
+	        		<th>Login</th>
+		        	<td concordion:set="#login">alabe</td>
+	        	</tr>
+	        	<tr>
+		        	<th>Senha</th>
+		        	<td concordion:set="#senha">******</td>
+	        	</tr>
+	        </table>
+        	<span concordion:assertEquals="logonInvalido(#login, #senha)">Login/Senha inválido(s)</span>
+    	</fieldset>
+    	<fieldset id="senhaFalha">
+    		<p><b>Exemplo 2:</b> Usuário entra com senha incorreta</p>
+	        <p>
+	            Usuário deve entrar com os dados:
+	        </p>
+	        <table>
+	        	<tr>
+	        		<th>Login</th>
+		        	<td concordion:set="#login">alabeduarte</td>
+	        	</tr>
+	        	<tr>
+		        	<th>Senha</th>
+		        	<td concordion:set="#senha">######</td>
+	        	</tr>
+	        </table>
+        	<span concordion:assertEquals="logonInvalido(#login, #senha)">Login/Senha inválido(s)</span>
+    	</fieldset>
+    	<fieldset id="validaLogin">
+    		<p><b>Exemplo 4:</b> Senha deve conter no mínimo 6 caracteres</p>
+	        <p>
+	            Usuário deve entrar com os dados:
+	        </p>
+	        <table>
+	        	<tr>
+	        		<th>Login</th>
+		        	<td concordion:set="#login">alabeduarte</td>
+	        	</tr>
+	        	<tr>
+		        	<th>Senha</th>
+		        	<td concordion:set="#senha">***</td>
+	        	</tr>
+	        </table>
+        	Mensagem de erro: <b concordion:assertEquals="validaLogin(#login, #senha)">Senha deve conter no mínimo 6 caracteres</b>
+    	</fieldset>
+    	<fieldset id="table">
+    		<p><b>Exemplo 5:</b> Resumo</p>
+	        <p>
+	            Usuário deve entrar com os dados:
+	        </p>
+	        <table concordion:execute="#result = logonEfetuadoComSucesso(#login, #senha)">
+	        	<tr>
+                    <th concordion:set="#login">Login</th>
+                    <th concordion:set="#senha">Senha</th>
+                    <th concordion:assertEquals="#result">Logon Efetuado com Sucesso</th>
+                </tr>
+	        	<tr>
+	        		<td>alabeduarte</td>
+                    <td>******</td>
+                    <td>OK</td>
+	        	</tr>
+	        	<tr>
+	        		<td>alabeduarte</td>
+                    <td>***</td>
+                    <td>FAIL</td>
+	        	</tr>
+	        	<tr>
+	        		<td>alabe</td>
+                    <td>***</td>
+                    <td>FAIL</td>
+	        	</tr>
+	        	<tr>
+	        		<td>alabe</td>
+                    <td>******</td>
+                    <td>FAIL</td>
+	        	</tr>
+	        	<tr>
+	        		<td>alabeduarte</td>
+                    <td>######</td>
+                    <td>FAIL</td>
+	        	</tr>
+	        	<tr>
+	        		<td>alabe</td>
+                    <td>######</td>
+                    <td>FAIL</td>
+	        	</tr>
+	        	<tr>
+	        		<td>alabeduarte</td>
+                    <td>***###</td>
+                    <td>FAIL</td>
+	        	</tr>
+	        	<tr>
+	        		<td>usuarioteste</td>
+                    <td>######</td>
+                    <td>FAIL</td>
+	        	</tr>
+	        </table>
+    	</fieldset>
+    </body>
+</html>
